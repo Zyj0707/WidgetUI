@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="title_color" format="color"/>
+    <attr name="fits_windows" format="boolean" />
+    <attr name="toolbar_back" format="reference" />
+</resources>
