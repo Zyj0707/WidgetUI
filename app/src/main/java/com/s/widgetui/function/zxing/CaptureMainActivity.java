@@ -1,5 +1,6 @@
 package com.s.widgetui.function.zxing;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -48,8 +49,15 @@ public class CaptureMainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == 1 && resultCode == 1){
-
+        switch (requestCode) {
+            case 1:
+                if(resultCode == Activity.RESULT_OK && data != null){
+                    //isBleopen = true;
+                    String code = data.getStringExtra("code");
+                    if (code != null) {
+                        textView.setText(code);
+                    }
+                }
         }
     }
 
